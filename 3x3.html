@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Véletlenszerű Számok</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            width: 150px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        .number {
+            padding: 20px;
+            border: 1px solid #000;
+        }
+        button {
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="number">1</div>
+        <div class="number">2</div>
+        <div class="number">3</div>
+        <div class="number">4</div>
+        <div class="number">5</div>
+        <div class="number">6</div>
+        <div class="number">7</div>
+        <div class="number">8</div>
+        <div class="number">9</div>
+    </div>
+    <button onclick="shuffleNumbers()">Keverés</button>
+
+    <script>
+        function shuffleNumbers() {
+            const container = document.querySelector('.container');
+            const numbers = Array.from(container.children);
+            const shuffledNumbers = numbers.sort(() => Math.random() - 0.5);
+            shuffledNumbers.forEach(number => container.appendChild(number));
+        }
+    </script>
+</body>
+</html>
